@@ -72,6 +72,7 @@ CREATE TABLE snow(
     FOREIGN KEY(resort) REFERENCES resort(name)
 );
 
+-- represents a city nearby the resort
 CREATE TABLE nearby_city(
     city_name VARCHAR(50) NOT NULL,
     state VARCHAR(50) NOT NULL, -- name of the state/province the city is in
@@ -81,6 +82,7 @@ CREATE TABLE nearby_city(
     FOREIGN KEY(resort) REFERENCES resort(name)
 );
 
+-- represents a lift ticket
 CREATE TABLE ticket(
     resort VARCHAR(50) NOT NULL,
     age_min INT UNSIGNED NOT NULL,
@@ -120,10 +122,15 @@ INSERT INTO chairlift VALUES('Colburn Triple', 'Schweitzer', 3, 'open');
 -- weather data
 INSERT INTO weather VALUES('Crystal', '2021-12-07 20:51:00', 3, 36, NULL);
 INSERT INTO weather VALUES('Schweitzer', '2021-12-08 00:01:00', 3, 39, NULL);
+INSERT INTO weather VALUES('Crystal', '2021-12-08 10:38:00', 2, 24, NULL);
+INSERT INTO weather VALUES('Schweitzer', '2021-12-08 15:00:00', 15, 22, NULL);
 
 -- snow data
 INSERT INTO snow VALUES('Crystal', '2021-12-07', NULL, 0, 0, NULL, NULL);
 INSERT INTO snow VALUES('Schweitzer', '2021-12-07', 34, 1, 1, 2, 2);
+INSERT INTO snow VALUES('Crystal', '2021-12-08', NULL, 0, 0, NULL, NULL);
+INSERT INTO snow VALUES('Schweitzer', '2021-12-08', 34, 0, 0, 1, 2);
+INSERT INTO snow VALUES('Whistler', '2021-12-08', 109, 0, 1, 1, NULL);
 
 -- nearby city data
 INSERT INTO nearby_city VALUES('Seattle', 'Washington', 'Crystal', 118);

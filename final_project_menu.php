@@ -31,7 +31,7 @@
                 <?php } ?>
             </select>
             <?php mysqli_close($conn); ?>
-            <input type="submit" value="Execute Query"/>
+            <input type="submit" value="Show Resort Info"/>
         </form>
     </body>
 </html>
